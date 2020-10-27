@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NewsComponent } from './news/news.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     NewsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
