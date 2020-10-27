@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -21,7 +22,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
       {path: 'dashboard', component: DashboardComponent},
       {path: '404', component: NotFoundComponent},
       {path: '**', redirectTo: '/404'},
-    ])
+    ]),
+    HighchartsChartModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
