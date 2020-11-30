@@ -1,0 +1,12 @@
+nav {
+  text-align: right;
+}
+
+.blog {
+  display: flex;
+  justify-content: center;
+}
+
+.blog-content {
+  max-width: 600px;
+}

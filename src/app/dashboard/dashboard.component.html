@@ -1,1 +1,62 @@
-<div>dashboard</div>
+<nav>
+  <a mat-button routerLink = "/">
+    Домой
+  </a>
+</nav>
+
+<mat-card-title>
+  <div class = 'header-city'>
+    Погода в городе {{ city }}   
+  </div>
+</mat-card-title>
+
+<mat-card-content>
+  <app-weather-date-range
+    (notifyDashboard)="onNotifyChangeRange($event)"
+  >
+  </app-weather-date-range>
+
+  <div>
+    <app-chart
+      [indicators] = "indicators"
+      [defaultIndicator] = "'temp'"
+      [graphStyles] = "graphStyles"
+      [colors] = "colors"
+      [selectedColor] = "'orange'"
+      [weatherData] = "weatherData"
+      [timeShift] = 'timeShift'
+    >
+    </app-chart>
+
+    <app-chart
+      [indicators] = "indicators"
+      [defaultIndicator] = "'humidity'"
+      [graphStyles] = "graphStyles"
+      [colors] = "colors"
+      [selectedColor] = "'green'"
+      [weatherData] = "weatherData"
+      [timeShift] = 'timeShift'
+    >
+    </app-chart>
+
+    <app-chart
+      [indicators] = "indicators"
+      [defaultIndicator] = "'cloudsPercent'"
+      [graphStyles] = "graphStyles"
+      [colors] = "colors"
+      [selectedColor] = "'violet'"
+      [weatherData] = "weatherData"
+      [timeShift] = 'timeShift'
+    >
+    </app-chart>
+
+    <app-multichart
+      [indicators] = "indicators"
+      [defaultIndicators] = "['windSpeed','pressure','visibility']"
+      [graphStyles] = "graphStyles"
+      [weatherData] = "weatherData"
+      [timeShift] = 'timeShift'
+    >
+    </app-multichart>
+  </div>
+</mat-card-content>

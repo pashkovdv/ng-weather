@@ -1,0 +1,11 @@
+.error-center-canter{
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 50vw;
+}
+
+nav {
+  text-align: center;
+}

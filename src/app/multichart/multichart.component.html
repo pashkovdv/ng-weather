@@ -1,8 +1,8 @@
 <mat-form-field appearance="fill">
   <mat-label>Индикатор</mat-label>
-  <mat-select [(value)]="selectedIndicatorData">
+  <mat-select [(value)]="selectedIndicatorData" multiple>
     <mat-option></mat-option>
-    <mat-option (onSelectionChange)="changeData($event)" [value]="option.key" *ngFor="let option of indicators">{{ option.name }} </mat-option>
+    <mat-option (click)="changeSelectedData()" [value]="option.key" *ngFor="let option of indicators">{{ option.name }} </mat-option>
   </mat-select>
 </mat-form-field>
 
@@ -14,18 +14,12 @@
   </mat-select>
 </mat-form-field>
 
-<mat-form-field appearance="fill">
-  <mat-label>Цвет</mat-label>
-  <mat-select [(value)]="selectedColor">
-    <mat-option></mat-option>
-    <mat-option (onSelectionChange)="changeColor($event)" [value]="option.key" *ngFor="let option of colors">{{ option.name }} </mat-option>
-  </mat-select>
-</mat-form-field>
-
 <highcharts-chart 
+  *ngIf = 'weatherData'
   [Highcharts]="Highcharts"
   [options]="chartOptions"
   [(update)]="updateFlag"
+  [oneToOne]='true'
   
   style="width: 100%; height: 300px; display: block;"
 >

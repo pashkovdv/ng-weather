@@ -1,1 +1,18 @@
-<p>news works!</p>
+<nav>
+  <a mat-button routerLink = "/dashboard">
+    Прогноз погоды
+  </a>
+</nav>
+
+<div class = "blog">
+  <div class = "blog-content">
+    <h1>
+      Блог
+    </h1>
+
+    <div *ngFor="let blogItem of blogData">
+      <h2>{{ blogItem.id }}. {{ blogItem.title }} </h2>
+      <p>{{ blogItem.body }}</p>
+    </div>
+  </div>
+</div>
